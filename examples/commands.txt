@@ -1,0 +1,60 @@
+MicroPython for Mere Mortals — the commands from the lab
+========================================================
+
+The lab ran MicroPython v1.29.0 (unix port, standard build) as
+`micropython` and CPython 3.12.3 as `python3`. Working transcripts
+are kept with the build in micropython-lab/transcripts/ (t01–t13).
+
+Versions (chapter 1, 2)
+    micropython --version
+    micropython -c "import sys; print(sys.implementation); print(sys.version)"
+    python3 --version
+
+The REPL (chapter 2) — start it in a terminal with just:
+    micropython
+The lab captured it through a pseudo-terminal:
+    printf '2 + 3\nname = "fern"\nprint(name.upper(), len(name))\n' \
+        | script -qec "micropython" /dev/null
+
+First script, both interpreters (chapters 2, 9)
+    micropython fixtures/first_steps.py
+    python3 fixtures/first_steps.py
+
+Module inventory (chapter 3)
+    micropython -c "help('modules')"
+    micropython fixtures/modules_try.py
+    python3 fixtures/modules_try.py
+
+Numbers (chapter 4)
+    micropython fixtures/numbers.py
+    python3 fixtures/numbers.py
+
+Strings and bytes (chapter 5)
+    micropython fixtures/strings_bytes.py
+    python3 fixtures/strings_bytes.py
+
+The micropython module and the heap (chapter 6)
+    micropython fixtures/micro_module.py
+    micropython -X heapsize=64k fixtures/gc_heap.py
+    micropython fixtures/gc_heap.py
+
+Speed decorators (chapter 7)
+    micropython fixtures/native_viper.py
+    micropython fixtures/timing.py
+    python3 fixtures/timing_cpython.py
+
+Files on the unix port (chapter 8)
+    micropython -c "import os; print(os.getcwd())"
+    micropython -c "import machine; print(dir(machine))"
+    micropython -c "import machine; machine.Pin(2, machine.Pin.OUT)"
+
+Worked example (chapter 9)
+    micropython fixtures/greenhouse.py
+    python3 fixtures/greenhouse.py
+    diff <(micropython fixtures/greenhouse.py) <(python3 fixtures/greenhouse.py)
+
+Syntax gaps (chapter 10)
+    micropython fixtures/walrus.py
+    python3 fixtures/walrus.py
+    micropython fixtures/match_stmt.py
+    python3 fixtures/match_stmt.py

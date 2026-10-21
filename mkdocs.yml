@@ -1,0 +1,24 @@
+site_name: MicroPython for Mere Mortals
+site_description: Plain-language MicroPython. The small Python built for microcontrollers, learned on its Linux port, with every difference from ordinary Python run for real against CPython and the differences shown.
+site_url: https://paulsullivan33-dev.github.io/micropython-for-mere-mortals/
+
+# Guides live at the repo root (nice for GitHub browsing).
+# The deploy workflow copies them into docs/ before building.
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - What MicroPython Is: what-micropython-is.md
+  - First Steps: first-steps.md
+  - The Smaller Library: the-smaller-library.md
+  - Numbers: numbers.md
+  - Strings and Bytes: strings-and-bytes.md
+  - The micropython Module: the-micropython-module.md
+  - Speed Decorators: speed-decorators.md
+  - Files on This Port: files-on-this-port.md
+  - Worked Example, the Greenhouse Log: greenhouse-worked-example.md
+  - When It Breaks: when-it-breaks.md
+  - Going to a Board: going-to-a-board.md
+  - Glossary: glossary.md
+  - Writing Criteria: criteria.md
